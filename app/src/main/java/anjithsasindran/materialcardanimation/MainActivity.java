@@ -62,17 +62,11 @@ public class MainActivity extends Activity {
         parameters.height = imageView.getHeight();
         revealView.setLayoutParams(parameters);
 
-        ObjectAnimator objectAnimatorX
-                = ObjectAnimator.ofFloat(imageButton, "translationX", 0f, -x);
-        ObjectAnimator objectAnimatorY
-                = ObjectAnimator.ofFloat(imageButton, "translationY", 0f, -y);
-
-        objectAnimatorX.setDuration(200);
-        objectAnimatorY.setDuration(200);
-
-        objectAnimatorX.start();
-        objectAnimatorY.start();
-        objectAnimatorX.addListener(new Animator.AnimatorListener() {
+        imageButton.animate()
+            .translationX(-x)
+            .translationY(-y)
+            .setDuration(200)
+            .setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animator) {
 
