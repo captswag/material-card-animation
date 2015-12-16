@@ -141,8 +141,8 @@ public class MainActivity extends Activity {
                         revealView.setVisibility(View.GONE);
                         imageButton.setVisibility(View.VISIBLE);
                         imageButton.animate()
-                          .translationX(-x)
-                          .translationY(-y)
+                          .translationX(0f)
+                          .translationY(0f)
                           .setDuration(200);
                     }
 
