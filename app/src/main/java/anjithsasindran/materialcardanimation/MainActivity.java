@@ -140,17 +140,10 @@ public class MainActivity extends Activity {
                     public void onAnimationEnd(Animator animator) {
                         revealView.setVisibility(View.GONE);
                         imageButton.setVisibility(View.VISIBLE);
-
-                        ObjectAnimator objectAnimatorX
-                                = ObjectAnimator.ofFloat(imageButton, "translationX", -x, 0f);
-                        ObjectAnimator objectAnimatorY
-                                = ObjectAnimator.ofFloat(imageButton, "translationY", -y, 0f);
-
-                        objectAnimatorX.setDuration(200);
-                        objectAnimatorY.setDuration(200);
-
-                        objectAnimatorX.start();
-                        objectAnimatorY.start();
+                        imageButton.animate()
+                          .translationX(-x)
+                          .translationY(-y)
+                          .setDuration(200);
                     }
 
                     @Override
